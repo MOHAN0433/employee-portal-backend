@@ -14,6 +14,7 @@ const {
 const getAllEmployees = async () => {
     const response = { statusCode: 200 };
     //const resource = event.resource;---
+    
     try {
         const { Items } = await client.send(
           new ScanCommand({ TableName: process.env.DYNAMODB_TABLE_NAME })
@@ -32,7 +33,7 @@ const getAllEmployees = async () => {
             data: Items.map((item) => unmarshall(item)), // A DynamoDB record into a JavaScript object and setting to the data
           });
         }
-        
+
       } catch (e) {
         // If any errors will occurred
         console.error(e);
