@@ -32,6 +32,7 @@ const getAllEmployees = async () => {
             data: Items.map((item) => unmarshall(item)), // A DynamoDB record into a JavaScript object and setting to the data
           });
         }
+        
       } catch (e) {
         // If any errors will occurred
         console.error(e);

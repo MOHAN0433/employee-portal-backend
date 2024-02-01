@@ -1,13 +1,13 @@
-service: employee-portal-service
+service: employee-portal-service-detials
 provider:
   name: aws
   runtime: nodejs18.x
   stage: dev
-  region: us-east-1
+  region: ap-south-1
   environment:
     EMPLOYEE_TABLE: ${self:custom.employeeTableName}
 custom:
-  employeeTableName: employee-Details-${self:provider.stage}
+  employeeTableName: employee-portal-Details-${self:provider.stage}
 plugins:
   - serverless-iam-roles-per-function
 package:
